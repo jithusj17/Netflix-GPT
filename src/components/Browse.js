@@ -1,6 +1,10 @@
-const Browse = () => {
+import Header from "./Header";
+
+    const Browse = () => {   
     return (
-        <div>this is Browse</div>
+        <div>
+        <Header /> 
+            this is Browse</div>
     )
 }
 export default Browse
