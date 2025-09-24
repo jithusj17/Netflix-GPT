@@ -4,7 +4,7 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utilits/userSlice";
-import { LOGO } from "../utilits/constants";
+import { LOGO, SUPPORTED_LANGUAGES } from "../utilits/constants";
 import { toggleGptSearchView } from "../utilits/gptSlice";
 
 const Header = () => {
@@ -57,6 +57,11 @@ const Header = () => {
 
       {user && (
         <div className="flex p-2 items-center space-x-4">
+          <select className="p-2 m-2 bg-gray-900 text-white">
+            {SUPPORTED_LANGUAGES.map((lang) =>(
+              <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+            ))}
+          </select>
           <button className="py-2 px-4 mx-4 my-2 bg bg-purple-700 text-white rounded-lg"
           onClick={HandleGptSearchClick}>
         GPT Search
