@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utilits/userSlice";
 import { LOGO } from "../utilits/constants";
+import { toggleGptSearchView } from "../utilits/gptSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -47,7 +48,7 @@ const Header = () => {
   }, []);
  
   const HandleGptSearchClick = () =>{
-    
+    dispatch(toggleGptSearchView())
   }
 
   return (
